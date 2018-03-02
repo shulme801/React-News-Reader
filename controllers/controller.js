@@ -1,3 +1,6 @@
+// Express router module
+
+
 // Node Dependencies
 var express = require('express');
 var router = express.Router();
@@ -8,12 +11,12 @@ var Article = require('../models/Article.js');
 
 
 
-// Main GET - This will display the ReactJS application.
+// Main GET - This route will display the ReactJS application.
 router.get("/", function(req, res) {
   res.sendFile(process.cwd() + "/public/index.html");
 });
 
-// API GET - your components will use this to query MongoDB for all saved articles.
+// API GET - route for the components to query MongoDB for all saved articles.
 router.get("/api/saved", function(req, res) {
   
   // Query Mongo for the Articles
@@ -31,10 +34,10 @@ router.get("/api/saved", function(req, res) {
 });
 
 
-// API POST - your components will use this to save an article to the database.
+// API POST - The react components will use this route to save an article to the database.
 router.post("/api/saved", function(req, res) {
   
-  // Using the Article model, create a new entry (note that the "req.bidy" object has the exact same key-value pairs as the model)
+  // Using the Article model, create a new entry (req.body's key-value pairs must match those of the model)
   var entry = new Article (req.body);
 
   // Save the entry to MongoDB
@@ -54,7 +57,7 @@ router.post("/api/saved", function(req, res) {
 });
 
 
-// API DELETE - your components will use this to delete a saved article in the database
+// API DELETE - route for react components to delete a saved article in the database
 router.post("/api/delete/:articleMongoId", function(req, res) {
   console.log(req.params.articleMongoId)
   Article.findByIdAndRemove(req.params.articleMongoId, function (err, todo) {
@@ -72,9 +75,9 @@ router.post("/api/delete/:articleMongoId", function(req, res) {
 });
 
 
-// CATCH ALL "*" - This redirect user to the "/" route for any unknown cases
+// Here's the catch all route just in case a route is used that we hadn't planned for
 router.get("*", function(req, res) {
-  res.redirect("/");
+  res.redirect("/"); //Send them back to the root directory
 });
 
 

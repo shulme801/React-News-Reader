@@ -21,13 +21,18 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/nytscrape";
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, { useMongoClient: true } );
 
 const db = mongoose.connection;
 
 // Show any Mongoose errors
 db.on("error", function(err) {
   console.log("Mongoose Error: ", err);
+});
+
+// Once logged in to the db through mongoose, log a success message
+db.once('open', function() {
+  console.log('Mongoose connection successful.');
 });
 
 
@@ -38,10 +43,8 @@ var Article = require('./models/Article.js');
 var router = require('./controllers/controller.js');
 app.use('/', router);
 
-
-
 // Launch App
 var port = process.env.PORT || 3000;
 app.listen(port, function(){
-  console.log('NYT React Scraper running on port: ' + port);
+  console.log('NYT React Scraper alive and running on port: ' + port);
 });

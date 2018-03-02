@@ -12,7 +12,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        // Only working with files that in in a .js or .jsx extension
+        // Only working with files that have a .js or .jsx extension
         test: /\.jsx?$/,
         // Webpack will only process files in our app folder. This avoids processing
         // node modules and server files unnecessarily

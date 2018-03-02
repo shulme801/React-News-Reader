@@ -5,7 +5,7 @@
 var React = require("react");
 
 // Requiring our helper for making API calls
-var helpers = require("../utils/helpers.js");
+var helpers = require("../routes/api-routes");
 
 // Create the Search Component
 var Saved = React.createClass({
@@ -41,8 +41,6 @@ var Saved = React.createClass({
   // Here we render the Search Results Panel
   render: function() {
 
-    // http://stackoverflow.com/questions/29810914/react-js-onclick-cant-pass-value-to-method
-    // another way could be using the bind() function. but why not try it this way too.
     var that = this;
 
     return (
@@ -56,8 +54,7 @@ var Saved = React.createClass({
         <div className="panel-body">
           <ul className="list-group col-md-8 col-md-offset-2">
 
-            {/* ++++++++++++++++++++++++++++++++ ITERATE HERE ++++++++++++++++++++++++++++++++ */}
-            {/* Here we use a map function to loop through an array in JSX */}
+            {/* Use map function to iterate through the array*/}
             {this.props.mongoResults.map(function(search, i) {
 
               return (
@@ -85,5 +82,5 @@ var Saved = React.createClass({
 });
 
 
-// Export the component back for use in Main file
+// Export the component for use in Main.jsx
 module.exports = Saved;

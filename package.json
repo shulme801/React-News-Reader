@@ -1,7 +1,6 @@
-{
-  "name": "nyt-react",
+  "name": "nyt-react-reader,
   "version": "1.0.0",
-  "description": "A Node, Express, MongoDB, and ReactJS application where users can query, display, and save articles from the New York Times Article Search API.",
+  "description": "A Node, Express, MongoDB, and ReactJS application to read, display, save, delete articles from the New York Times Article Search API.",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,12 +11,12 @@
     "type": "git",
     "url": "git+https://github.com/tomtom28/nyt-react.git"
   },
-  "author": "tomtom28",
+  "author": "shulme801",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tomtom28/nyt-react/issues"
+    "url": "https://github.com/shulme801/nyt-react/issues"
   },
-  "homepage": "https://github.com/tomtom28/nyt-react#readme",
+  "homepage": "https://github.com/shulme801/nyt-react#readme",
   "dependencies": {
     "axios": "^0.15.3",
     "body-parser": "^1.15.2",

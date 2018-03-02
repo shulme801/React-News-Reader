@@ -1,25 +1,25 @@
-// Require Mongoose
+// Require our friendly Mongo ORM --> Mongoose
 var mongoose = require('mongoose');
 
-// Create a Schema Class
+// Define the Schema Class
 var Schema = mongoose.Schema;
 
-// Create Article Schema
+// Set up the fields in our Schema
 var ArticleSchema = new Schema({
 
-  // Title of Article
+  // We will store the title of the article
   title: {
     type: String,
     required: true
   },
 
-  // Date of Article
+  // Store article date
   date: {
     type: String,
     required: true
   },
   
-  // Link to Article
+  // And store a link so user can read the full text of the article
   url: {
     type: String,
     required: true
@@ -27,7 +27,7 @@ var ArticleSchema = new Schema({
 
 });
 
-// Create the Article model with Mongoose
+// Instantiate the schema
 var Article = mongoose.model('Article', ArticleSchema);
 
 // Export the Model
