@@ -68,8 +68,8 @@ var Main = React.createClass({
 
         <div className="page-header">
           <h1 className="text-center"><img style={ {width: "70%"} } src="assets/images/nyt-header.svg" alt="The New York Times"/></h1>
-          <h2 className="text-center" style={ {marginTop: "-12px"} }><b><i>A React News Reader</i></b></h2>
-          <h4 className="text-center">Search for articles of interest. Click on headlines read the entire article.</h4>
+          <h2 className="text-center" style={ {marginTop: "-12px"} }><b><i>Headline News Reader</i></b></h2>
+          <h4 className="text-center">Search for articles of interest. Click on a headline to read the full article.</h4>
         </div>
 
         <Query _setSearchFeilds={this._setSearchFeilds} />

@@ -22567,14 +22567,14 @@
 	            React.createElement(
 	              "i",
 	              null,
-	              "A React News Reader"
+	              "Headline News Reader"
 	            )
 	          )
 	        ),
 	        React.createElement(
 	          "h4",
 	          { className: "text-center" },
-	          "Search for articles of interest. Click on headlines read the entire article."
+	          "Search for articles of interest. Click on a headline to read the full article."
 	        )
 	      ),
 	      React.createElement(Query, { _setSearchFeilds: this._setSearchFeilds }),
